@@ -182,9 +182,9 @@ function DashboardPreview() {
           <GlassPanel strong className="!p-8 sm:!p-12">
             <div className="grid gap-6 md:grid-cols-3">
               {[
-                { label: "Nervous System", value: "Regulated", trend: "+12%", color: "from-sky-400 to-purple-500" },
-                { label: "Cognitive Load", value: "Light", trend: "-24%", color: "from-purple-500 to-cyan-400" },
-                { label: "Emotional Range", value: "Expansive", trend: "+41%", color: "from-cyan-400 to-sky-400" },
+                { label: "Nervous System", value: "Regulated", trend: "+12%", color: "from-blue-500 to-yellow-400" },
+                { label: "Cognitive Load", value: "Light", trend: "-24%", color: "from-yellow-400 to-red-500" },
+                { label: "Emotional Range", value: "Expansive", trend: "+41%", color: "from-blue-400 to-blue-600" },
               ].map((m) => (
                 <GlassPanel key={m.label} className="!p-6">
                   <p className="text-xs uppercase tracking-widest text-muted-foreground">{m.label}</p>

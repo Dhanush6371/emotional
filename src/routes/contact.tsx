@@ -108,8 +108,8 @@ function ContactPage() {
                   ))}
                   <defs>
                     <linearGradient id="g" x1="0" x2="1">
-                      <stop offset="0%" stopColor="#38BDF8" />
-                      <stop offset="100%" stopColor="#8B5CF6" />
+                      <stop offset="0%" stopColor="#0077BE" />
+                      <stop offset="100%" stopColor="#FDB913" />
                     </linearGradient>
                   </defs>
                 </svg>

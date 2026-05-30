@@ -1,17 +1,7 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
-/*
- * Emotional Fitness Academy — Medicine Wheel inspired design system.
- * Based on the sacred Medicine Wheel: Yellow (East), Red (South), Black (West), White (North)
- * Combined with deep ocean blue representing the emotional iceberg.
- * Holistic balance meets emotional depth. All colors in oklch.
- */
-
-@theme inline {
+@theme {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -19,45 +9,54 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-medicine-yellow: var(--medicine-yellow);
-  --color-medicine-red: var(--medicine-red);
-  --color-medicine-black: var(--medicine-black);
-  --color-medicine-white: var(--medicine-white);
-  --color-iceberg-blue: var(--iceberg-blue);
-  --color-iceberg-light: var(--iceberg-light);
+
+  /* Medicine Wheel Logo Colors - Exact Hex Values */
+  --color-medicine-yellow: #FDB913;
+  --color-medicine-red: #E31E24;
+  --color-medicine-black: #000000;
+  --color-medicine-white: #FFFFFF;
+  --color-iceberg-blue: #0077BE;
+  --color-iceberg-light: #87CEEB;
+  --color-iceberg-deep: #003D5B;
+
+  /* Base System Colors */
+  --color-background: #FFFFFF;
+  --color-foreground: #1A1A1A;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A1A1A;
+  --color-primary: #0077BE;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #FFF8E7;
+  --color-secondary-foreground: #1A1A1A;
+  --color-muted: #F5F5F5;
+  --color-muted-foreground: #6B7280;
+  --color-accent: #E31E24;
+  --color-accent-foreground: #FFFFFF;
+  --color-destructive: #E31E24;
+  --color-destructive-foreground: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-input: #F3F4F6;
+  --color-ring: #0077BE;
+
+  /* Charts */
+  --color-chart-1: #FDB913;
+  --color-chart-2: #E31E24;
+  --color-chart-3: #0077BE;
+  --color-chart-4: #87CEEB;
+  --color-chart-5: #003D5B;
+
+  /* Sidebar */
+  --color-sidebar: #F8F9FA;
+  --color-sidebar-foreground: #1A1A1A;
+  --color-sidebar-primary: #0077BE;
+  --color-sidebar-primary-foreground: #FFFFFF;
+  --color-sidebar-accent: #F5F5F5;
+  --color-sidebar-accent-foreground: #1A1A1A;
+  --color-sidebar-border: #E5E7EB;
+  --color-sidebar-ring: #0077BE;
+
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -65,116 +64,108 @@
 :root {
   --radius: 1rem;
 
-  /* Medicine Wheel Core Colors */
-  --medicine-yellow: oklch(0.92 0.15 95);
-  /* East - New beginnings, vision */
-  --medicine-red: oklch(0.62 0.25 25);
-  /* South - Growth, passion */
-  --medicine-black: oklch(0.20 0.02 265);
-  /* West - Introspection, depth */
-  --medicine-white: oklch(0.99 0 0);
-  /* North - Wisdom, clarity */
-  --iceberg-blue: oklch(0.65 0.14 235);
-  /* Deep emotional waters */
-  --iceberg-light: oklch(0.88 0.08 240);
-  /* Surface ice */
+  /* Medicine Wheel Logo Colors */
+  --medicine-yellow: #FDB913;
+  --medicine-red: #E31E24;
+  --medicine-black: #000000;
+  --medicine-white: #FFFFFF;
+  --iceberg-blue: #0077BE;
+  --iceberg-light: #87CEEB;
+  --iceberg-deep: #003D5B;
 
-  /* Base Colors - White/Light foundation */
-  --background: oklch(0.99 0 0);
-  --frost: oklch(0.96 0.005 240);
-  --silver: oklch(0.88 0.012 240);
-  --foreground: oklch(0.20 0.02 265);
-  --card: oklch(0.99 0 0);
-  --card-foreground: oklch(0.20 0.02 265);
-  --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.20 0.02 265);
+  /* Base Colors */
+  --background: #FFFFFF;
+  --frost: #F8F9FA;
+  --silver: #E8EAED;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
 
-  /* Primary - Iceberg Blue (emotional depth) */
-  --primary: oklch(0.65 0.14 235);
-  --primary-foreground: oklch(0.99 0 0);
+  /* Primary - Iceberg Blue */
+  --primary: #0077BE;
+  --primary-foreground: #FFFFFF;
 
-  /* Secondary - Medicine Yellow (new beginnings) */
-  --secondary: oklch(0.95 0.08 95);
-  --secondary-foreground: oklch(0.20 0.02 265);
+  /* Secondary - Medicine Yellow */
+  --secondary: #FFF8E7;
+  --secondary-foreground: #1A1A1A;
 
-  /* Accent - Medicine Red (passion, growth) */
-  --accent: oklch(0.62 0.25 25);
-  --accent-foreground: oklch(0.99 0 0);
+  /* Accent - Medicine Red */
+  --accent: #E31E24;
+  --accent-foreground: #FFFFFF;
 
-  /* Muted - Soft neutrals */
-  --muted: oklch(0.95 0.008 240);
-  --muted-foreground: oklch(0.50 0.03 255);
+  /* Muted */
+  --muted: #F5F5F5;
+  --muted-foreground: #6B7280;
 
-  /* Destructive - Keep red for warnings */
-  --destructive: oklch(0.60 0.24 27);
-  --destructive-foreground: oklch(0.99 0 0);
+  /* Destructive */
+  --destructive: #E31E24;
+  --destructive-foreground: #FFFFFF;
 
   /* Borders & Inputs */
-  --border: oklch(0.88 0.012 240);
-  --input: oklch(0.92 0.01 240);
-  --ring: oklch(0.65 0.14 235);
+  --border: #E5E7EB;
+  --input: #F3F4F6;
+  --ring: #0077BE;
 
   /* Charts - Medicine Wheel colors */
-  --chart-1: oklch(0.92 0.15 95);
-  /* Yellow */
-  --chart-2: oklch(0.62 0.25 25);
-  /* Red */
-  --chart-3: oklch(0.65 0.14 235);
-  /* Blue */
-  --chart-4: oklch(0.88 0.08 240);
-  /* Light Ice */
-  --chart-5: oklch(0.50 0.03 255);
-  /* Gray */
+  --chart-1: #FDB913;
+  --chart-2: #E31E24;
+  --chart-3: #0077BE;
+  --chart-4: #87CEEB;
+  --chart-5: #003D5B;
 
   /* Sidebar */
-  --sidebar: oklch(0.96 0.005 240);
-  --sidebar-foreground: oklch(0.20 0.02 265);
-  --sidebar-primary: oklch(0.65 0.14 235);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.95 0.008 240);
-  --sidebar-accent-foreground: oklch(0.20 0.02 265);
-  --sidebar-border: oklch(0.88 0.012 240);
-  --sidebar-ring: oklch(0.65 0.14 235);
+  --sidebar: #F8F9FA;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #0077BE;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F5F5;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #E5E7EB;
+  --sidebar-ring: #0077BE;
 
   /* Medicine Wheel gradient - Four directions */
   --gradient-medicine-wheel: linear-gradient(135deg,
-      oklch(0.92 0.15 95) 0%,
+      #FDB913 0%,
       /* Yellow - East */
-      oklch(0.62 0.25 25) 33%,
+      #E31E24 33%,
       /* Red - South */
-      oklch(0.20 0.02 265) 66%,
+      #000000 66%,
       /* Black - West */
-      oklch(0.99 0 0) 100%
+      #FFFFFF 100%
       /* White - North */
     );
 
   /* Iceberg gradient - Depth to surface */
   --gradient-iceberg: linear-gradient(180deg,
-      oklch(0.88 0.08 240) 0%,
+      #87CEEB 0%,
       /* Light ice surface */
-      oklch(0.65 0.14 235) 100%
-      /* Deep blue waters */
+      #0077BE 50%,
+      /* Ocean blue */
+      #003D5B 100%
+      /* Deep waters */
     );
 
-  /* Holistic balance gradient */
+  /* Holistic balance gradient - Blue, Yellow, Red */
   --gradient-glow: linear-gradient(135deg,
-      oklch(0.65 0.14 235) 0%,
+      #0077BE 0%,
       /* Blue - emotional depth */
-      oklch(0.92 0.15 95) 50%,
+      #FDB913 50%,
       /* Yellow - enlightenment */
-      oklch(0.62 0.25 25) 100%
+      #E31E24 100%
       /* Red - passion */
     );
 
   --gradient-soft: linear-gradient(135deg,
-      oklch(0.65 0.14 235 / 0.12),
-      oklch(0.92 0.15 95 / 0.10),
-      oklch(0.62 0.25 25 / 0.12));
+      rgba(0, 119, 190, 0.12),
+      rgba(253, 185, 19, 0.10),
+      rgba(227, 49, 36, 0.12));
 
-  --shadow-glow: 0 20px 60px -20px oklch(0.65 0.14 235 / 0.35),
-    0 8px 30px -10px oklch(0.92 0.15 95 / 0.30);
-  --shadow-soft: 0 10px 40px -10px oklch(0.20 0.02 265 / 0.08),
-    0 4px 12px -4px oklch(0.20 0.02 265 / 0.05);
+  --shadow-glow: 0 20px 60px -20px rgba(0, 119, 190, 0.35),
+    0 8px 30px -10px rgba(253, 185, 19, 0.30);
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08),
+    0 4px 12px -4px rgba(0, 0, 0, 0.05);
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.8);
   --cursor-x: 50%;
@@ -182,48 +173,48 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.75 0.14 235);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.70 0.25 25);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.75 0.14 235);
-  --chart-1: oklch(0.92 0.15 95);
-  --chart-2: oklch(0.70 0.25 25);
-  --chart-3: oklch(0.75 0.14 235);
-  --chart-4: oklch(0.88 0.08 240);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.75 0.14 235);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.75 0.14 235);
+  --background: #0A0A0A;
+  --foreground: #FAFAFA;
+  --card: #1A1A1A;
+  --card-foreground: #FAFAFA;
+  --popover: #1A1A1A;
+  --popover-foreground: #FAFAFA;
+  --primary: #0077BE;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #FAFAFA;
+  --muted: #2A2A2A;
+  --muted-foreground: #A1A1AA;
+  --accent: #E31E24;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E31E24;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #0077BE;
+  --chart-1: #FDB913;
+  --chart-2: #E31E24;
+  --chart-3: #0077BE;
+  --chart-4: #87CEEB;
+  --chart-5: #003D5B;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #0077BE;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #2A2A2A;
+  --sidebar-accent-foreground: #FAFAFA;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #0077BE;
 }
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: var(--border);
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--background);
+    color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -301,13 +292,13 @@
   }
 
   .medicine-ring {
-    box-shadow: 0 0 0 1px oklch(0.65 0.14 235 / 0.25),
-      0 0 30px oklch(0.92 0.15 95 / 0.25);
+    box-shadow: 0 0 0 1px rgba(0, 119, 190, 0.25),
+      0 0 30px rgba(253, 185, 19, 0.25);
   }
 
   .cursor-glow-bg {
     background: radial-gradient(600px circle at var(--cursor-x) var(--cursor-y),
-        oklch(0.65 0.14 235 / 0.10), oklch(0.92 0.15 95 / 0.06) 30%, transparent 60%);
+        rgba(0, 119, 190, 0.10), rgba(253, 185, 19, 0.06) 30%, transparent 60%);
   }
 
   @keyframes float-y {

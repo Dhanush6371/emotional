@@ -8,7 +8,7 @@ export function GradientOrb({ className, size = 600 }: { className?: string; siz
       style={{
         width: size,
         height: size,
-        background: "radial-gradient(circle at 30% 30%, #38BDF8, #8B5CF6 50%, transparent 70%)",
+        background: "radial-gradient(circle at 30% 30%, #0077BE, #FDB913 50%, transparent 70%)",
       }}
     />
   );

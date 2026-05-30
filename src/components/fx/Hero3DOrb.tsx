@@ -14,12 +14,12 @@ function Orb() {
     <Float speed={1.4} rotationIntensity={0.6} floatIntensity={1.2}>
       <Sphere ref={ref} args={[1.4, 128, 128]}>
         <MeshDistortMaterial
-          color="#8B5CF6"
+          color="#0077BE"
           distort={0.45}
           speed={2}
           roughness={0.1}
           metalness={0.6}
-          emissive="#38BDF8"
+          emissive="#0077BE"
           emissiveIntensity={0.4}
         />
       </Sphere>
@@ -31,9 +31,9 @@ export function Hero3DOrb() {
   return (
     <Canvas camera={{ position: [0, 0, 4], fov: 45 }} dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
       <ambientLight intensity={0.6} />
-      <directionalLight position={[5, 5, 5]} intensity={1.2} color="#38BDF8" />
-      <directionalLight position={[-5, -3, -2]} intensity={0.8} color="#22D3EE" />
-      <pointLight position={[0, 0, 3]} intensity={1.5} color="#8B5CF6" />
+      <directionalLight position={[5, 5, 5]} intensity={1.2} color="#0077BE" />
+      <directionalLight position={[-5, -3, -2]} intensity={0.8} color="#87CEEB" />
+      <pointLight position={[0, 0, 3]} intensity={1.5} color="#FDB913" />
       <Suspense fallback={null}>
         <Orb />
       </Suspense>
