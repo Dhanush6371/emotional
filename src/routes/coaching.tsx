@@ -35,9 +35,12 @@ const benefits = [
 function CoachingPage() {
   return (
     <div className="relative">
-      <section className="relative pt-40 pb-16">
+      <section className="relative pt-40 pb-16 bg-gradient-to-br from-background via-iceberg-light/8 to-frost/20">
         <GradientOrb className="-right-40 top-20" size={500} />
-        <div className="mx-auto max-w-5xl px-6 text-center">
+        {/* Iceberg depth visualization */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-iceberg-blue/5 to-transparent" />
+        <div className="absolute top-10 left-10 w-[450px] h-[450px] bg-medicine-yellow/6 rounded-full blur-3xl" />
+        <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Coaching Program</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">
             A 12-week <span className="text-gradient">cinematic transformation</span>.

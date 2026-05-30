@@ -38,10 +38,15 @@ function Index() {
 function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-24">
-      <div className="absolute inset-0 -z-10">
+      {/* Medicine Wheel inspired background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-frost to-background">
         <ClientOnly>
           <ParticleField density={80} />
         </ClientOnly>
+        {/* Subtle Medicine Wheel color accents */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-medicine-yellow/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-iceberg-blue/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-iceberg opacity-5 rounded-full blur-3xl" />
       </div>
       <GradientOrb className="-left-40 top-20" size={500} />
       <GradientOrb className="-right-40 bottom-0" size={600} />
@@ -161,7 +166,7 @@ function Hero() {
 
 function DashboardPreview() {
   return (
-    <section className="relative py-32">
+    <section className="relative py-32 bg-gradient-to-b from-background via-frost/30 to-background">
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Wellness Intelligence</p>
@@ -242,7 +247,10 @@ function ServiceCards() {
     { icon: Sparkles, title: "AI Wellness Guidance", desc: "An always-on emotional companion trained on your patterns." },
   ];
   return (
-    <section className="relative py-32">
+    <section className="relative py-32 bg-gradient-to-b from-background to-frost/20">
+      {/* Subtle accent orbs */}
+      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-medicine-red/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-medicine-yellow/8 rounded-full blur-3xl" />
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Pillars</p>
@@ -280,7 +288,7 @@ function ServiceCards() {
 
 function AIAssistant() {
   return (
-    <section className="relative py-32">
+    <section className="relative py-32 bg-gradient-to-b from-frost/20 via-background to-frost/30">
       <div className="mx-auto max-w-7xl px-6">
         <GlassPanel strong className="relative overflow-hidden !p-12 sm:!p-20">
           <GradientOrb className="-right-40 -top-40" size={600} />
@@ -327,7 +335,7 @@ function AIAssistant() {
                 <div className="mt-4 flex items-center gap-2 self-start glass rounded-full px-4 py-2">
                   <Mic className="h-4 w-4 text-accent" />
                   <div className="flex gap-1">
-                    {[1,2,3,4,5].map((b) => (
+                    {[1, 2, 3, 4, 5].map((b) => (
                       <motion.span
                         key={b}
                         animate={{ scaleY: [0.4, 1, 0.4] }}
@@ -354,8 +362,10 @@ function Storytelling() {
     { n: "04", t: "Embodiment", d: "Live with sustained clarity, range, and presence." },
   ];
   return (
-    <section className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="relative py-32 bg-gradient-to-b from-frost/30 to-background">
+      {/* Iceberg depth visualization */}
+      <div className="absolute inset-0 bg-gradient-to-b from-iceberg-light/5 to-iceberg-blue/5" />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">The Journey</p>
           <h2 className="mt-4 font-display text-5xl font-light leading-tight">
@@ -381,8 +391,11 @@ function Storytelling() {
 
 function CTA() {
   return (
-    <section className="relative py-32">
-      <div className="mx-auto max-w-5xl px-6">
+    <section className="relative py-32 bg-gradient-to-b from-background via-frost/20 to-background">
+      {/* Medicine Wheel completion - all four colors subtly present */}
+      <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-medicine-yellow/8 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-iceberg-blue/10 rounded-full blur-3xl" />
+      <div className="mx-auto max-w-5xl px-6 relative z-10">
         <GlassPanel strong className="relative overflow-hidden !p-16 text-center">
           <GradientOrb className="left-1/2 top-0 -translate-x-1/2" size={800} />
           <div className="relative z-10">
