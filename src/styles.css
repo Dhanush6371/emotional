@@ -5,9 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Emotional Fitness Academy — futuristic wellness design system.
- * Ultra-clean white surfaces with neon blue / electric purple / soft cyan
- * holographic accents. All colors in oklch.
+ * Emotional Fitness Academy — Medicine Wheel inspired design system.
+ * Based on the sacred Medicine Wheel: Yellow (East), Red (South), Black (West), White (North)
+ * Combined with deep ocean blue representing the emotional iceberg.
+ * Holistic balance meets emotional depth. All colors in oklch.
  */
 
 @theme inline {
@@ -51,66 +52,131 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-neon-blue: var(--neon-blue);
-  --color-electric-purple: var(--electric-purple);
-  --color-soft-cyan: var(--soft-cyan);
-  --color-frost: var(--frost);
-  --color-silver: var(--silver);
+  --color-medicine-yellow: var(--medicine-yellow);
+  --color-medicine-red: var(--medicine-red);
+  --color-medicine-black: var(--medicine-black);
+  --color-medicine-white: var(--medicine-white);
+  --color-iceberg-blue: var(--iceberg-blue);
+  --color-iceberg-light: var(--iceberg-light);
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 1rem;
-  /* Pure White / Frost / Silver */
-  --background: oklch(1 0 0);
-  --frost: oklch(0.984 0.005 247);
-  --silver: oklch(0.91 0.012 250);
-  --foreground: oklch(0.18 0.04 265);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.04 265);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.04 265);
-  /* Neon Blue #38BDF8 */
-  --neon-blue: oklch(0.78 0.14 230);
-  --primary: oklch(0.78 0.14 230);
-  --primary-foreground: oklch(0.99 0 0);
-  /* Electric Purple #8B5CF6 */
-  --electric-purple: oklch(0.65 0.22 295);
-  --accent: oklch(0.65 0.22 295);
-  --accent-foreground: oklch(0.99 0 0);
-  /* Soft Cyan #22D3EE */
-  --soft-cyan: oklch(0.82 0.13 210);
-  --secondary: oklch(0.97 0.008 250);
-  --secondary-foreground: oklch(0.18 0.04 265);
-  --muted: oklch(0.97 0.008 250);
-  --muted-foreground: oklch(0.5 0.03 255);
-  --destructive: oklch(0.6 0.24 27);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.012 250);
-  --input: oklch(0.94 0.01 250);
-  --ring: oklch(0.78 0.14 230);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.005 247);
-  --sidebar-foreground: oklch(0.18 0.04 265);
-  --sidebar-primary: oklch(0.78 0.14 230);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.97 0.008 250);
-  --sidebar-accent-foreground: oklch(0.18 0.04 265);
-  --sidebar-border: oklch(0.92 0.012 250);
-  --sidebar-ring: oklch(0.78 0.14 230);
 
-  /* Holographic gradient + glows */
-  --gradient-glow: linear-gradient(135deg, #38BDF8 0%, #8B5CF6 50%, #22D3EE 100%);
-  --gradient-soft: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(139,92,246,0.10), rgba(34,211,238,0.12));
-  --shadow-glow: 0 20px 60px -20px rgba(139,92,246,0.35), 0 8px 30px -10px rgba(56,189,248,0.30);
-  --shadow-soft: 0 10px 40px -10px rgba(15,23,42,0.08), 0 4px 12px -4px rgba(15,23,42,0.05);
-  --glass-bg: rgba(255,255,255,0.55);
-  --glass-border: rgba(255,255,255,0.7);
+  /* Medicine Wheel Core Colors */
+  --medicine-yellow: oklch(0.92 0.15 95);
+  /* East - New beginnings, vision */
+  --medicine-red: oklch(0.62 0.25 25);
+  /* South - Growth, passion */
+  --medicine-black: oklch(0.20 0.02 265);
+  /* West - Introspection, depth */
+  --medicine-white: oklch(0.99 0 0);
+  /* North - Wisdom, clarity */
+  --iceberg-blue: oklch(0.65 0.14 235);
+  /* Deep emotional waters */
+  --iceberg-light: oklch(0.88 0.08 240);
+  /* Surface ice */
+
+  /* Base Colors - White/Light foundation */
+  --background: oklch(0.99 0 0);
+  --frost: oklch(0.96 0.005 240);
+  --silver: oklch(0.88 0.012 240);
+  --foreground: oklch(0.20 0.02 265);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.20 0.02 265);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.20 0.02 265);
+
+  /* Primary - Iceberg Blue (emotional depth) */
+  --primary: oklch(0.65 0.14 235);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary - Medicine Yellow (new beginnings) */
+  --secondary: oklch(0.95 0.08 95);
+  --secondary-foreground: oklch(0.20 0.02 265);
+
+  /* Accent - Medicine Red (passion, growth) */
+  --accent: oklch(0.62 0.25 25);
+  --accent-foreground: oklch(0.99 0 0);
+
+  /* Muted - Soft neutrals */
+  --muted: oklch(0.95 0.008 240);
+  --muted-foreground: oklch(0.50 0.03 255);
+
+  /* Destructive - Keep red for warnings */
+  --destructive: oklch(0.60 0.24 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  /* Borders & Inputs */
+  --border: oklch(0.88 0.012 240);
+  --input: oklch(0.92 0.01 240);
+  --ring: oklch(0.65 0.14 235);
+
+  /* Charts - Medicine Wheel colors */
+  --chart-1: oklch(0.92 0.15 95);
+  /* Yellow */
+  --chart-2: oklch(0.62 0.25 25);
+  /* Red */
+  --chart-3: oklch(0.65 0.14 235);
+  /* Blue */
+  --chart-4: oklch(0.88 0.08 240);
+  /* Light Ice */
+  --chart-5: oklch(0.50 0.03 255);
+  /* Gray */
+
+  /* Sidebar */
+  --sidebar: oklch(0.96 0.005 240);
+  --sidebar-foreground: oklch(0.20 0.02 265);
+  --sidebar-primary: oklch(0.65 0.14 235);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.95 0.008 240);
+  --sidebar-accent-foreground: oklch(0.20 0.02 265);
+  --sidebar-border: oklch(0.88 0.012 240);
+  --sidebar-ring: oklch(0.65 0.14 235);
+
+  /* Medicine Wheel gradient - Four directions */
+  --gradient-medicine-wheel: linear-gradient(135deg,
+      oklch(0.92 0.15 95) 0%,
+      /* Yellow - East */
+      oklch(0.62 0.25 25) 33%,
+      /* Red - South */
+      oklch(0.20 0.02 265) 66%,
+      /* Black - West */
+      oklch(0.99 0 0) 100%
+      /* White - North */
+    );
+
+  /* Iceberg gradient - Depth to surface */
+  --gradient-iceberg: linear-gradient(180deg,
+      oklch(0.88 0.08 240) 0%,
+      /* Light ice surface */
+      oklch(0.65 0.14 235) 100%
+      /* Deep blue waters */
+    );
+
+  /* Holistic balance gradient */
+  --gradient-glow: linear-gradient(135deg,
+      oklch(0.65 0.14 235) 0%,
+      /* Blue - emotional depth */
+      oklch(0.92 0.15 95) 50%,
+      /* Yellow - enlightenment */
+      oklch(0.62 0.25 25) 100%
+      /* Red - passion */
+    );
+
+  --gradient-soft: linear-gradient(135deg,
+      oklch(0.65 0.14 235 / 0.12),
+      oklch(0.92 0.15 95 / 0.10),
+      oklch(0.62 0.25 25 / 0.12));
+
+  --shadow-glow: 0 20px 60px -20px oklch(0.65 0.14 235 / 0.35),
+    0 8px 30px -10px oklch(0.92 0.15 95 / 0.30);
+  --shadow-soft: 0 10px 40px -10px oklch(0.20 0.02 265 / 0.08),
+    0 4px 12px -4px oklch(0.20 0.02 265 / 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.8);
   --cursor-x: 50%;
   --cursor-y: 50%;
 }
@@ -122,32 +188,32 @@
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.75 0.14 235);
+  --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
+  --accent: oklch(0.70 0.25 25);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
+  --ring: oklch(0.75 0.14 235);
+  --chart-1: oklch(0.92 0.15 95);
+  --chart-2: oklch(0.70 0.25 25);
+  --chart-3: oklch(0.75 0.14 235);
+  --chart-4: oklch(0.88 0.08 240);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.208 0.042 265.755);
   --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.75 0.14 235);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.279 0.041 260.031);
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --sidebar-ring: oklch(0.75 0.14 235);
 }
 
 @layer base {
@@ -163,7 +229,10 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -177,58 +246,134 @@
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-soft);
   }
+
   .glass-strong {
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(40px) saturate(200%);
     -webkit-backdrop-filter: blur(40px) saturate(200%);
-    border: 1px solid rgba(255,255,255,0.8);
+    border: 1px solid rgba(255, 255, 255, 0.85);
     box-shadow: var(--shadow-glow);
   }
+
   .text-gradient {
     background: var(--gradient-glow);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
-  .bg-gradient-glow { background: var(--gradient-glow); }
-  .bg-gradient-soft { background: var(--gradient-soft); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-soft { box-shadow: var(--shadow-soft); }
-  .neon-ring { box-shadow: 0 0 0 1px rgba(139,92,246,0.25), 0 0 30px rgba(56,189,248,0.25); }
+
+  .text-medicine-wheel {
+    background: var(--gradient-medicine-wheel);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-iceberg {
+    background: var(--gradient-iceberg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-glow {
+    background: var(--gradient-glow);
+  }
+
+  .bg-gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .bg-gradient-medicine-wheel {
+    background: var(--gradient-medicine-wheel);
+  }
+
+  .bg-gradient-iceberg {
+    background: var(--gradient-iceberg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .medicine-ring {
+    box-shadow: 0 0 0 1px oklch(0.65 0.14 235 / 0.25),
+      0 0 30px oklch(0.92 0.15 95 / 0.25);
+  }
 
   .cursor-glow-bg {
     background: radial-gradient(600px circle at var(--cursor-x) var(--cursor-y),
-      rgba(56,189,248,0.10), rgba(139,92,246,0.06) 30%, transparent 60%);
+        oklch(0.65 0.14 235 / 0.10), oklch(0.92 0.15 95 / 0.06) 30%, transparent 60%);
   }
 
   @keyframes float-y {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-12px);
+    }
   }
-  .animate-float { animation: float-y 6s ease-in-out infinite; }
+
+  .animate-float {
+    animation: float-y 6s ease-in-out infinite;
+  }
 
   @keyframes orb-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
-  .animate-orb-spin { animation: orb-spin 30s linear infinite; }
+
+  .animate-orb-spin {
+    animation: orb-spin 30s linear infinite;
+  }
 
   @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
   }
+
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient-shift 8s ease infinite;
   }
 
   @keyframes waveform {
-    0%, 100% { transform: scaleY(0.3); }
-    50% { transform: scaleY(1); }
+
+    0%,
+    100% {
+      transform: scaleY(0.3);
+    }
+
+    50% {
+      transform: scaleY(1);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
