@@ -52,8 +52,8 @@ function BlogPage() {
 
       <section className="relative pt-40 pb-12 bg-gradient-to-br from-background via-frost/20 to-iceberg-light/10">
         <GradientOrb className="-right-40 top-20" size={500} />
-        {/* Subtle wisdom accent (North - White) */}
-        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-medicine-yellow/6 rounded-full blur-3xl" />
+        {/* Cool blue wisdom */}
+        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-iceberg-light/8 rounded-full blur-3xl" />
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Insights</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">

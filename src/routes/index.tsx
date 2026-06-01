@@ -43,8 +43,8 @@ function Hero() {
         <ClientOnly>
           <ParticleField density={80} />
         </ClientOnly>
-        {/* Subtle Medicine Wheel color accents */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-medicine-yellow/5 rounded-full blur-3xl" />
+        {/* Subtle cool blue accents */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-iceberg-light/8 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-iceberg-blue/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-iceberg opacity-5 rounded-full blur-3xl" />
       </div>
@@ -182,8 +182,8 @@ function DashboardPreview() {
           <GlassPanel strong className="!p-8 sm:!p-12">
             <div className="grid gap-6 md:grid-cols-3">
               {[
-                { label: "Nervous System", value: "Regulated", trend: "+12%", color: "from-blue-500 to-yellow-400" },
-                { label: "Cognitive Load", value: "Light", trend: "-24%", color: "from-yellow-400 to-red-500" },
+                { label: "Nervous System", value: "Regulated", trend: "+12%", color: "from-blue-400 to-blue-500" },
+                { label: "Cognitive Load", value: "Light", trend: "-24%", color: "from-blue-500 to-blue-600" },
                 { label: "Emotional Range", value: "Expansive", trend: "+41%", color: "from-blue-400 to-blue-600" },
               ].map((m) => (
                 <GlassPanel key={m.label} className="!p-6">
@@ -248,9 +248,9 @@ function ServiceCards() {
   ];
   return (
     <section className="relative py-32 bg-gradient-to-b from-background to-frost/20">
-      {/* Subtle accent orbs */}
-      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-medicine-red/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-medicine-yellow/8 rounded-full blur-3xl" />
+      {/* Subtle cool blue accents */}
+      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-iceberg-blue/6 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-iceberg-light/10 rounded-full blur-3xl" />
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Pillars</p>
@@ -392,8 +392,8 @@ function Storytelling() {
 function CTA() {
   return (
     <section className="relative py-32 bg-gradient-to-b from-background via-frost/20 to-background">
-      {/* Medicine Wheel completion - all four colors subtly present */}
-      <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-medicine-yellow/8 rounded-full blur-3xl" />
+      {/* Cool blue tones */}
+      <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-iceberg-light/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-iceberg-blue/10 rounded-full blur-3xl" />
       <div className="mx-auto max-w-5xl px-6 relative z-10">
         <GlassPanel strong className="relative overflow-hidden !p-16 text-center">

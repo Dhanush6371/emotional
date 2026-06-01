@@ -43,9 +43,9 @@ function Page() {
     <div className="relative">
       <section className="relative pt-40 pb-12 bg-gradient-to-br from-background via-iceberg-light/10 to-frost/25">
         <GradientOrb className="-left-40 top-20" size={500} />
-        {/* Transformation and growth energy */}
-        <div className="absolute top-0 right-10 w-[450px] h-[450px] bg-medicine-red/7 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-medicine-yellow/8 rounded-full blur-3xl" />
+        {/* Cool blue transformation */}
+        <div className="absolute top-0 right-10 w-[450px] h-[450px] bg-iceberg-blue/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-iceberg-light/10 rounded-full blur-3xl" />
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Stories</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">

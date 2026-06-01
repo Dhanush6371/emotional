@@ -34,8 +34,8 @@ function BookingPage() {
     <div className="relative min-h-screen pt-32 pb-20 bg-gradient-to-b from-background via-frost/30 to-background">
       <GradientOrb className="-left-40 top-20" size={500} />
       <GradientOrb className="-right-40 bottom-0" size={500} />
-      {/* Holistic balance - all four directions subtly present */}
-      <div className="absolute top-20 right-20 w-[350px] h-[350px] bg-medicine-yellow/8 rounded-full blur-3xl" />
+      {/* Cool blue balance */}
+      <div className="absolute top-20 right-20 w-[350px] h-[350px] bg-iceberg-light/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-20 w-[350px] h-[350px] bg-iceberg-blue/10 rounded-full blur-3xl" />
 
       <div className="mx-auto max-w-4xl px-6 relative z-10">

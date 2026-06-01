@@ -36,8 +36,8 @@ function AboutPage() {
     <div className="relative">
       <section className="relative pt-40 pb-20 bg-gradient-to-br from-background via-iceberg-light/10 to-frost/30">
         <GradientOrb className="-right-40 top-20" size={500} />
-        {/* Medicine Wheel accent */}
-        <div className="absolute top-20 left-10 w-[400px] h-[400px] bg-medicine-yellow/8 rounded-full blur-3xl" />
+        {/* Cool blue accents */}
+        <div className="absolute top-20 left-10 w-[400px] h-[400px] bg-iceberg-light/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-20 w-[350px] h-[350px] bg-iceberg-blue/10 rounded-full blur-3xl" />
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">About</p>
