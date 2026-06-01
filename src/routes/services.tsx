@@ -32,9 +32,6 @@ function ServicesPage() {
     <div className="relative">
       <section className="relative pt-40 pb-16 bg-gradient-to-br from-background via-frost/20 to-iceberg-light/8">
         <GradientOrb className="-left-40 top-20" size={500} />
-        {/* Cool blue presence */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-iceberg-blue/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-iceberg-light/8 rounded-full blur-3xl" />
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Services</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">

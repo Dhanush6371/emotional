@@ -43,10 +43,6 @@ function Hero() {
         <ClientOnly>
           <ParticleField density={80} />
         </ClientOnly>
-        {/* Subtle cool blue accents */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-iceberg-light/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-iceberg-blue/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-iceberg opacity-5 rounded-full blur-3xl" />
       </div>
       <GradientOrb className="-left-40 top-20" size={500} />
       <GradientOrb className="-right-40 bottom-0" size={600} />
@@ -248,9 +244,6 @@ function ServiceCards() {
   ];
   return (
     <section className="relative py-32 bg-gradient-to-b from-background to-frost/20">
-      {/* Subtle cool blue accents */}
-      <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-iceberg-blue/6 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-iceberg-light/10 rounded-full blur-3xl" />
       <div className="mx-auto max-w-7xl px-6">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Pillars</p>
@@ -392,9 +385,6 @@ function Storytelling() {
 function CTA() {
   return (
     <section className="relative py-32 bg-gradient-to-b from-background via-frost/20 to-background">
-      {/* Cool blue tones */}
-      <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-iceberg-light/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-iceberg-blue/10 rounded-full blur-3xl" />
       <div className="mx-auto max-w-5xl px-6 relative z-10">
         <GlassPanel strong className="relative overflow-hidden !p-16 text-center">
           <GradientOrb className="left-1/2 top-0 -translate-x-1/2" size={800} />

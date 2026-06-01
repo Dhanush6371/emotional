@@ -4,7 +4,7 @@ export function GradientOrb({ className, size = 600 }: { className?: string; siz
   return (
     <div
       aria-hidden
-      className={cn("pointer-events-none absolute rounded-full blur-3xl opacity-60 animate-float", className)}
+      className={cn("pointer-events-none absolute rounded-full blur-3xl opacity-20 animate-float", className)}
       style={{
         width: size,
         height: size,
