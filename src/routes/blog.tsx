@@ -19,14 +19,21 @@ export const Route = createFileRoute("/blog")({
 });
 
 const posts = [
-  { title: "Why emotional fitness is the next century's discipline", cat: "Manifesto", time: "8 min" },
-  { title: "The 4-7-8 protocol, revisited", cat: "Practice", time: "5 min" },
-  { title: "Designing an AI that calms instead of agitates", cat: "Technology", time: "12 min" },
-  { title: "Naturopathy meets nervous system science", cat: "Research", time: "10 min" },
-  { title: "Rituals over routines: an architecture of meaning", cat: "Lifestyle", time: "7 min" },
-  { title: "Recovering from a high-velocity year", cat: "Story", time: "6 min" },
+  { title: "And When I Listened", cat: "Emotional Fitness®", time: "8 min", author: "Luciano Onichino, BA, RMT" },
+  { title: "Homelessness & Taking Action", cat: "Community", time: "6 min", author: "Bill Lane" },
+  { title: "Fear – False evidence appearing real?", cat: "Personal Growth", time: "7 min", author: "Keaton Van Bryce" },
+  { title: "How financially fit are you?", cat: "Wellness", time: "10 min", author: "Dr. Richard Vaillancourt" },
+  { title: "Organizational Culture & Emotional Fitness®", cat: "Leadership", time: "12 min", author: "Dr. Richard Vaillancourt" },
+  { title: "Trauma Is Our Friend", cat: "Emotional Fitness®", time: "9 min", author: "Darren Duguay" },
+  { title: "A Self-Examined Life", cat: "Personal Growth", time: "8 min", author: "EFA Team" },
+  { title: "Loving Myself Means Letting Go of My Fears", cat: "Personal Growth", time: "6 min", author: "EFA Team" },
+  { title: "Truly, Who Am I?", cat: "Philosophy", time: "11 min", author: "Luciano" },
+  { title: "Peeling Back the Layers", cat: "Emotional Fitness®", time: "7 min", author: "EFA Team" },
+  { title: "Emotional Fitness® Storytelling", cat: "Emotional Fitness®", time: "5 min", author: "EFA Team" },
+  { title: "Co-Creating the More Beautiful World", cat: "Philosophy", time: "9 min", author: "EFA Team" },
+  { title: "My Last Chapter", cat: "Personal Growth", time: "8 min", author: "Darren Duguay" },
 ];
-const cats = ["All", "Manifesto", "Practice", "Technology", "Research", "Lifestyle", "Story"];
+const cats = ["All", "Emotional Fitness®", "Personal Growth", "Leadership", "Community", "Wellness", "Philosophy"];
 
 function BlogPage() {
   const [q, setQ] = useState("");
@@ -53,10 +60,13 @@ function BlogPage() {
       <section className="relative pt-40 pb-12 bg-gradient-to-br from-background via-frost/20 to-iceberg-light/10">
         <GradientOrb className="-right-40 top-20" size={500} />
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
-          <p className="text-xs uppercase tracking-[0.4em] text-accent">Insights</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-accent">Insights & Stories</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">
-            Field notes <span className="text-gradient">from the frontier</span>.
+            Emotional Fitness® <span className="text-gradient">Academy Blog</span>
           </h1>
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+            Your destination for personal growth, transformational insights, and real-life stories from the Emotional Fitness Academy community.
+          </p>
         </div>
       </section>
 
@@ -66,10 +76,10 @@ function BlogPage() {
             <GlassPanel strong className="relative overflow-hidden !p-10 sm:!p-14">
               <GradientOrb className="-left-40 -top-40" size={500} />
               <div className="relative z-10">
-                <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured</p>
-                <h2 className="mt-3 font-display text-4xl font-light sm:text-5xl max-w-2xl">Why emotional fitness is the next century's discipline.</h2>
-                <p className="mt-4 max-w-xl text-muted-foreground">A long-form essay on the cultural shift from physical to emotional infrastructure — and the technologies catalyzing it.</p>
-                <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-glow px-6 py-3 text-sm text-white shadow-glow">Read essay <ArrowRight className="h-4 w-4" /></button>
+                <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured Article</p>
+                <h2 className="mt-3 font-display text-4xl font-light sm:text-5xl max-w-2xl">Trauma Is Our Friend</h2>
+                <p className="mt-4 max-w-xl text-muted-foreground">By Darren Duguay, BSc, BEd, EFI, CD1, n.d. — An exploration of connecting within through trauma understanding, and how our experiences shape our emotional fitness journey.</p>
+                <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-glow px-6 py-3 text-sm text-white shadow-glow">Read article <ArrowRight className="h-4 w-4" /></button>
               </div>
             </GlassPanel>
           </ScrollReveal>
@@ -101,6 +111,7 @@ function BlogPage() {
                     </div>
                     <div className="p-6">
                       <h3 className="font-display text-xl font-light leading-snug">{p.title}</h3>
+                      <p className="mt-2 text-xs text-muted-foreground">By {p.author}</p>
                       <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
                         <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{p.time}</span>
                         <span className="inline-flex items-center gap-1 text-gradient">Read <ArrowRight className="h-3 w-3" /></span>

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Mail, MessageCircle, MapPin, Sparkles, Send, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Send, Instagram, Linkedin, Youtube, CheckCircle, Clock } from "lucide-react";
 import { GlassPanel } from "@/components/fx/GlassPanel";
 import { GradientOrb } from "@/components/fx/GradientOrb";
 import { ScrollReveal } from "@/components/fx/ScrollReveal";
@@ -27,8 +27,11 @@ function ContactPage() {
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Contact</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">
-            Say <span className="text-gradient">hello</span>.
+            Get In <span className="text-gradient">Touch</span>
           </h1>
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+            Have questions about our programs? Want to learn more? We'd love to hear from you.
+          </p>
         </div>
       </section>
 
@@ -63,9 +66,9 @@ function ContactPage() {
 
           <div className="grid gap-4">
             {[
-              { icon: Mail, label: "Email", value: "hello@efacademy.io" },
-              { icon: MessageCircle, label: "Chat", value: "24/7 concierge" },
-              { icon: MapPin, label: "Studio", value: "Lisbon · Bali · NYC" },
+              { icon: Mail, label: "Email", value: "darren.d@efitacademy.ca" },
+              { icon: MessageCircle, label: "Phone", value: "(506) 850-7592" },
+              { icon: MapPin, label: "Location", value: "Worldwide (Virtual Services)" },
             ].map((c) => (
               <ScrollReveal key={c.label}>
                 <GlassPanel className="!p-6 flex items-center gap-4">
@@ -79,10 +82,16 @@ function ContactPage() {
             ))}
             <ScrollReveal>
               <GlassPanel className="!p-6">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Follow</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Follow Us</p>
                 <div className="mt-4 flex gap-2">
-                  {[Instagram, Linkedin, Youtube, Twitter].map((Icon, i) => (
-                    <a key={i} href="#" className="glass rounded-full p-3 transition-transform hover:scale-110"><Icon className="h-4 w-4" /></a>
+                  {[
+                    { Icon: Instagram, label: "Instagram" },
+                    { Icon: Linkedin, label: "LinkedIn" },
+                    { Icon: Youtube, label: "YouTube" },
+                  ].map((social) => (
+                    <a key={social.label} href="#" className="glass rounded-full p-3 transition-transform hover:scale-110">
+                      <social.Icon className="h-4 w-4" />
+                    </a>
                   ))}
                 </div>
               </GlassPanel>
@@ -113,18 +122,39 @@ function ContactPage() {
                 <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 2, repeat: Infinity }} className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-glow shadow-glow" />
               </div>
               <div className="p-6">
-                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Headquarters</p>
-                <p className="mt-1 font-display text-lg">Lisbon, Portugal</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Serving Clients</p>
+                <p className="mt-1 font-display text-lg">Worldwide</p>
+                <p className="mt-2 text-xs text-muted-foreground">Virtual & in-person sessions available</p>
               </div>
             </GlassPanel>
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <GlassPanel strong className="!p-10 h-full flex flex-col justify-center">
-              <Sparkles className="h-5 w-5 text-accent" />
-              <h3 className="mt-4 font-display text-3xl font-light">Need an answer right now?</h3>
-              <p className="mt-3 text-muted-foreground">Our AI concierge is online 24/7 to triage questions about programs, scheduling, and logistics.</p>
-              <button className="mt-6 inline-flex w-fit items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium hover:neon-ring">Chat with EFA AI</button>
+              <CheckCircle className="h-5 w-5 text-accent" />
+              <h3 className="mt-4 font-display text-3xl font-light">Office Hours</h3>
+              <div className="mt-6 space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Mon, Tue, Thu</span>
+                  <span>7am - 8pm ADT</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Wednesday</span>
+                  <span>7am - 5pm ADT</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Friday</span>
+                  <span>7am - 12pm ADT</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Saturday (Summer)</span>
+                  <span>10am - 1pm ADT</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Sunday</span>
+                  <span>Closed</span>
+                </div>
+              </div>
             </GlassPanel>
           </ScrollReveal>
         </div>

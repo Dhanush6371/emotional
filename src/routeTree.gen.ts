@@ -13,10 +13,13 @@ import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PodcastRouteImport } from './routes/podcast'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CoachingRouteImport } from './routes/coaching'
+import { Route as CoachesCornerRouteImport } from './routes/coaches-corner'
+import { Route as CoachTrainingRouteImport } from './routes/coach-training'
 import { Route as BookingRouteImport } from './routes/booking'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as R7PillarsRouteImport } from './routes/7-pillars'
+import { Route as R1On1ProgramRouteImport } from './routes/1-on-1-program'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TestimonialsRoute = TestimonialsRouteImport.update({
@@ -39,9 +42,14 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CoachingRoute = CoachingRouteImport.update({
-  id: '/coaching',
-  path: '/coaching',
+const CoachesCornerRoute = CoachesCornerRouteImport.update({
+  id: '/coaches-corner',
+  path: '/coaches-corner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachTrainingRoute = CoachTrainingRouteImport.update({
+  id: '/coach-training',
+  path: '/coach-training',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookingRoute = BookingRouteImport.update({
@@ -59,6 +67,16 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const R7PillarsRoute = R7PillarsRouteImport.update({
+  id: '/7-pillars',
+  path: '/7-pillars',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R1On1ProgramRoute = R1On1ProgramRouteImport.update({
+  id: '/1-on-1-program',
+  path: '/1-on-1-program',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -67,10 +85,13 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/1-on-1-program': typeof R1On1ProgramRoute
+  '/7-pillars': typeof R7PillarsRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/booking': typeof BookingRoute
-  '/coaching': typeof CoachingRoute
+  '/coach-training': typeof CoachTrainingRoute
+  '/coaches-corner': typeof CoachesCornerRoute
   '/contact': typeof ContactRoute
   '/podcast': typeof PodcastRoute
   '/services': typeof ServicesRoute
@@ -78,10 +99,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/1-on-1-program': typeof R1On1ProgramRoute
+  '/7-pillars': typeof R7PillarsRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/booking': typeof BookingRoute
-  '/coaching': typeof CoachingRoute
+  '/coach-training': typeof CoachTrainingRoute
+  '/coaches-corner': typeof CoachesCornerRoute
   '/contact': typeof ContactRoute
   '/podcast': typeof PodcastRoute
   '/services': typeof ServicesRoute
@@ -90,10 +114,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/1-on-1-program': typeof R1On1ProgramRoute
+  '/7-pillars': typeof R7PillarsRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRoute
   '/booking': typeof BookingRoute
-  '/coaching': typeof CoachingRoute
+  '/coach-training': typeof CoachTrainingRoute
+  '/coaches-corner': typeof CoachesCornerRoute
   '/contact': typeof ContactRoute
   '/podcast': typeof PodcastRoute
   '/services': typeof ServicesRoute
@@ -103,10 +130,13 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/1-on-1-program'
+    | '/7-pillars'
     | '/about'
     | '/blog'
     | '/booking'
-    | '/coaching'
+    | '/coach-training'
+    | '/coaches-corner'
     | '/contact'
     | '/podcast'
     | '/services'
@@ -114,10 +144,13 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/1-on-1-program'
+    | '/7-pillars'
     | '/about'
     | '/blog'
     | '/booking'
-    | '/coaching'
+    | '/coach-training'
+    | '/coaches-corner'
     | '/contact'
     | '/podcast'
     | '/services'
@@ -125,10 +158,13 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/1-on-1-program'
+    | '/7-pillars'
     | '/about'
     | '/blog'
     | '/booking'
-    | '/coaching'
+    | '/coach-training'
+    | '/coaches-corner'
     | '/contact'
     | '/podcast'
     | '/services'
@@ -137,10 +173,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R1On1ProgramRoute: typeof R1On1ProgramRoute
+  R7PillarsRoute: typeof R7PillarsRoute
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRoute
   BookingRoute: typeof BookingRoute
-  CoachingRoute: typeof CoachingRoute
+  CoachTrainingRoute: typeof CoachTrainingRoute
+  CoachesCornerRoute: typeof CoachesCornerRoute
   ContactRoute: typeof ContactRoute
   PodcastRoute: typeof PodcastRoute
   ServicesRoute: typeof ServicesRoute
@@ -177,11 +216,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/coaching': {
-      id: '/coaching'
-      path: '/coaching'
-      fullPath: '/coaching'
-      preLoaderRoute: typeof CoachingRouteImport
+    '/coaches-corner': {
+      id: '/coaches-corner'
+      path: '/coaches-corner'
+      fullPath: '/coaches-corner'
+      preLoaderRoute: typeof CoachesCornerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coach-training': {
+      id: '/coach-training'
+      path: '/coach-training'
+      fullPath: '/coach-training'
+      preLoaderRoute: typeof CoachTrainingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/booking': {
@@ -205,6 +251,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/7-pillars': {
+      id: '/7-pillars'
+      path: '/7-pillars'
+      fullPath: '/7-pillars'
+      preLoaderRoute: typeof R7PillarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/1-on-1-program': {
+      id: '/1-on-1-program'
+      path: '/1-on-1-program'
+      fullPath: '/1-on-1-program'
+      preLoaderRoute: typeof R1On1ProgramRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -217,10 +277,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R1On1ProgramRoute: R1On1ProgramRoute,
+  R7PillarsRoute: R7PillarsRoute,
   AboutRoute: AboutRoute,
   BlogRoute: BlogRoute,
   BookingRoute: BookingRoute,
-  CoachingRoute: CoachingRoute,
+  CoachTrainingRoute: CoachTrainingRoute,
+  CoachesCornerRoute: CoachesCornerRoute,
   ContactRoute: ContactRoute,
   PodcastRoute: PodcastRoute,
   ServicesRoute: ServicesRoute,

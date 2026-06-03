@@ -1,23 +1,32 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  {
+    label: "Programs",
+    items: [
+      { to: "/1-on-1-program", label: "1-on-1 Naturopath Consultation" },
+      { to: "/7-pillars", label: "7 Pillars of Self" },
+      { to: "/coach-training", label: "Coach Training Course" },
+    ]
+  },
   { to: "/services", label: "Services" },
-  { to: "/coaching", label: "Coaching" },
+  { to: "/testimonials", label: "Testimonials" },
+  { to: "/coaches-corner", label: "Coach's Corner" },
   { to: "/podcast", label: "Podcast" },
-  { to: "/testimonials", label: "Stories" },
-  { to: "/blog", label: "Insights" },
+  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -55,17 +64,60 @@ export function NavBar() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
-            {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                className="rounded-full px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-white/60 hover:text-foreground"
-                activeProps={{ className: "bg-white/80 text-foreground shadow-soft" }}
-                activeOptions={{ exact: l.to === "/" }}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((link) => {
+              if ('items' in link) {
+                return (
+                  <div
+                    key={link.label}
+                    className="relative"
+                    onMouseEnter={() => setProgramsOpen(true)}
+                    onMouseLeave={() => setProgramsOpen(false)}
+                  >
+                    <button
+                      className="rounded-full px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-white/60 hover:text-foreground flex items-center gap-1"
+                    >
+                      {link.label}
+                      <ChevronDown className="h-3 w-3" />
+                    </button>
+
+                    <AnimatePresence>
+                      {programsOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-0 mt-2 w-64 glass-strong rounded-2xl p-2 shadow-lg"
+                        >
+                          {link.items.map((item) => (
+                            <Link
+                              key={item.to}
+                              to={item.to}
+                              className="block rounded-xl px-4 py-2.5 text-xs font-medium text-muted-foreground transition-all hover:bg-white/60 hover:text-foreground"
+                              activeProps={{ className: "bg-white/80 text-foreground" }}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="rounded-full px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-all hover:bg-white/60 hover:text-foreground"
+                  activeProps={{ className: "bg-white/80 text-foreground shadow-soft" }}
+                  activeOptions={{ exact: link.to === "/" }}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <Link
@@ -75,32 +127,55 @@ export function NavBar() {
             Book Session
           </Link>
 
-          <button onClick={() => setOpen(!open)} className="lg:hidden rounded-full p-2 glass" aria-label="Menu">
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden rounded-full p-2 glass" aria-label="Menu">
+            {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
 
-        {open && (
+        {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className="mt-2 lg:hidden glass-strong rounded-3xl p-4"
           >
             <nav className="grid gap-1">
-              {links.map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  onClick={() => setOpen(false)}
-                  className="rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-white/60 hover:text-foreground"
-                  activeProps={{ className: "bg-white text-foreground" }}
-                >
-                  {l.label}
-                </Link>
-              ))}
+              {links.map((link) => {
+                if ('items' in link) {
+                  return (
+                    <div key={link.label}>
+                      <div className="px-4 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                        {link.label}
+                      </div>
+                      {link.items.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          onClick={() => setMobileOpen(false)}
+                          className="rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-white/60 hover:text-foreground block pl-8"
+                          activeProps={{ className: "bg-white text-foreground" }}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-white/60 hover:text-foreground"
+                    activeProps={{ className: "bg-white text-foreground" }}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <Link
                 to="/booking"
-                onClick={() => setOpen(false)}
+                onClick={() => setMobileOpen(false)}
                 className="mt-2 rounded-2xl bg-gradient-glow px-4 py-3 text-center text-sm font-semibold text-white"
               >
                 Book Session

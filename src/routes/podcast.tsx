@@ -19,15 +19,15 @@ export const Route = createFileRoute("/podcast")({
 });
 
 const episodes = [
-  { n: 42, title: "The Neuroscience of Calm", host: "Dr. Lila Okafor", dur: "48 min", tag: "Neuroscience" },
-  { n: 41, title: "Rebuilding Trust with the Body", host: "Aanya Rao", dur: "52 min", tag: "Somatics" },
-  { n: 40, title: "AI as a Mirror, Not a Crutch", host: "Marcus Chen", dur: "39 min", tag: "Technology" },
-  { n: 39, title: "Burnout's Quiet Architecture", host: "Iris Vasquez", dur: "44 min", tag: "Lifestyle" },
-  { n: 38, title: "The Practice of Slowing Down", host: "Aanya Rao", dur: "31 min", tag: "Practice" },
-  { n: 37, title: "Plant Medicine, Reverently", host: "Dr. Lila Okafor", dur: "57 min", tag: "Naturopathy" },
+  { n: 1, title: "Buddy Up - Come Off The Ledge", host: "Carl Chase", dur: "45 min", tag: "Mental Health", series: "Come Off The Ledge", date: "July 6th" },
+  { n: 2, title: "The Shift from Productivity to Purpose", host: "Phabien Doiron", dur: "42 min", tag: "Personal Growth", series: "The Connected Movement" },
+  { n: 3, title: "To Heal Is To Feel", host: "Darren Duguay", dur: "38 min", tag: "Emotional Fitness", series: "The Connected Movement" },
+  { n: 4, title: "Would you like to play a game", host: "John Leygraaf & Diane Stevens Trites", dur: "35 min", tag: "Motivation", series: "Motivate To Move" },
+  { n: 5, title: "Best Trade Ever", host: "John Leygraaf & Diane Stevens Trites", dur: "40 min", tag: "Success", series: "Motivate To Move" },
+  { n: 6, title: "The Will To Survive", host: "Carl Chase", dur: "48 min", tag: "Resilience", series: "Come Off The Ledge" },
 ];
 
-const categories = ["All", "Neuroscience", "Somatics", "Technology", "Lifestyle", "Practice", "Naturopathy"];
+const categories = ["All", "Mental Health", "Personal Growth", "Emotional Fitness", "Motivation", "Success", "Resilience"];
 
 function PodcastPage() {
   const [q, setQ] = useState("");
@@ -42,8 +42,11 @@ function PodcastPage() {
         <div className="mx-auto max-w-5xl px-6 text-center relative z-10">
           <p className="text-xs uppercase tracking-[0.4em] text-accent">Podcast</p>
           <h1 className="mt-4 font-display text-6xl font-light leading-[0.95] sm:text-8xl">
-            Cinematic conversations <span className="text-gradient">on becoming</span>.
+            Looking For <span className="text-gradient">Meaningful Conversations</span>?
           </h1>
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+            Listen to inspiring conversations about emotional fitness, personal growth, and transformation.
+          </p>
         </div>
       </section>
 
@@ -53,9 +56,9 @@ function PodcastPage() {
             <GradientOrb className="-left-40 -top-40" size={500} />
             <div className="relative z-10 grid items-center gap-10 md:grid-cols-[1fr_auto]">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured · Episode 42</p>
-                <h2 className="mt-3 font-display text-4xl font-light sm:text-5xl">The Neuroscience of Calm</h2>
-                <p className="mt-4 text-muted-foreground max-w-md">Dr. Lila Okafor on the vagal nerve, polyvagal theory, and the daily rituals that rewire baseline.</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-accent">Featured · July 6th</p>
+                <h2 className="mt-3 font-display text-4xl font-light sm:text-5xl">Buddy Up - Come Off The Ledge</h2>
+                <p className="mt-4 text-muted-foreground max-w-md">Host Carl Chase discusses the critical topic of men's suicide prevention. In Canada, the suicide rate for men is 3x higher than women. This campaign calls for men to support men.</p>
                 <div className="mt-6 flex items-end gap-1 h-12">
                   {Array.from({ length: 36 }).map((_, i) => (
                     <motion.span
@@ -128,12 +131,16 @@ function PodcastPage() {
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
           <GlassPanel strong className="!p-10">
-            <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-accent" /><p className="text-xs uppercase tracking-[0.3em] text-accent">AI Recommended for you</p></div>
+            <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-accent" /><p className="text-xs uppercase tracking-[0.3em] text-accent">Featured Series</p></div>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {episodes.slice(0, 3).map((e) => (
-                <div key={e.n} className="rounded-2xl bg-white/60 p-5">
-                  <p className="text-xs text-accent">#{e.n}</p>
-                  <h3 className="mt-2 font-display text-lg">{e.title}</h3>
+              {[
+                { series: "Come Off The Ledge", desc: "Conversations on mental health and suicide prevention" },
+                { series: "The Connected Movement", desc: "Stories of purpose, healing, and transformation" },
+                { series: "Motivate To Move", desc: "Inspiring discussions on motivation and success" },
+              ].map((s) => (
+                <div key={s.series} className="rounded-2xl bg-white/60 p-5">
+                  <h3 className="font-display text-lg">{s.series}</h3>
+                  <p className="mt-2 text-xs text-muted-foreground">{s.desc}</p>
                 </div>
               ))}
             </div>
